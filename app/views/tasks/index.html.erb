@@ -1,10 +1,15 @@
+<%= link_to "New Task", new_task_path, class: "btn btn-primary addtask" %>
 <div class="card tasks">
     <% @tasks.each do |task| %>
-      <div class="card-body row">
-          <img src="https://play-lh.googleusercontent.com/sEZyG7dJQ6e7oUk4nCgJB1lGnQAW8_ytwh7pRMjDDJtHuNeupgTxflt5UMoa-oFQzdI" class="card-img-top" alt="tache image",  style= "width: 40px">
+      <div class="card-body row task">
+          <img src="https://play-lh.googleusercontent.com/sEZyG7dJQ6e7oUk4nCgJB1lGnQAW8_ytwh7pRMjDDJtHuNeupgTxflt5UMoa-oFQzdI" class="card-img-top" alt="tache image",  style= "width: 140px">
           <h5 class="card-title"><%= task.title %></h5>
           <p class="card-text"><%= task.description %></p>
-          <a href="#" class="btn btn-primary " style ="width: 80px"><%= task.status %></a>
+          <p class="card-text">⚠️ <%= task.priority %></p>
+          <input class="form-check-input  task-checkbox" type="checkbox" value="" id="flexCheckIndeterminate">
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            Task done
+          </label>
         </div>
   <% end %>
 </div>

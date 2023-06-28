@@ -1,0 +1,22 @@
+<div class="nouveltach d-flex justify-content-center">
+  <%= form_for @task do |f| %>
+    <div class="input-group mt-3 mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+      <%= f.text_field :title, placeholder: 'Title', class: "input-creation-style" %>
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+      <%= f.text_field :description, placeholder: 'Description', class: "input-creation-style" %>
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Priority</span>
+      <%= f.select :priority, options_for_select([['1 Low', 1], ['2 Middle', 2], ['3 High', 3]]), { prompt: 'Choose priority' }, class: "form-select" %>
+    </div>
+
+    <div class="lesboutons mt-3"></div>
+    <%= f.submit %>
+    <%= f.submit "Clear", type: "reset" %>
+  <% end %>
+</div>
